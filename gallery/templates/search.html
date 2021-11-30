@@ -14,10 +14,10 @@
     {% if images %}
     <div class="card-columns">
         {% for image in images %}
-        <a href = "#{{image.id}}" class="card" data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img" style="height: 370px; width: 370px;">
-            <h4 class="text-center text-success" style="text-transform: uppercase;">{{image.name}}</h4>
-          </a>
+       <a href = "#{{image.id}}" class="card" data-toggle="modal" data-target="#{{image.id}}">
+                  <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img" style="height: 370px; width: 370px;">
+                  <h4 class="text-center text-success" style="text-transform: uppercase;">{{image.name}}</h4>
+                </a>
 
 
         <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
