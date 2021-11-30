@@ -41,18 +41,18 @@
                     </div>
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text" value="{{image.image.url}}"
-                            id="{{image.id}}.url">
-                        <button class="btn btn-success btn-sm" type="button" onclick="copyToClipboard();">Copy</button>
+                        id="core">
+                    <button class="btn btn-success btn-sm" type="button" onclick="myFunction()">Copy</button>
 
-                            <script>
-                                function copyToClipboard() {
-                                    var copyText = document.getElementById("{{img.id}}.url");
-                                    copyText.select();
-                                    copyText.setSelectionRange(0, 99999)
-                                    document.execCommand("copy");
-                                    alert('url copied');
-                                }
-                            </script>
+                        <script>
+                            function myFunction() {
+                                var copyText = document.getElementById("core");
+                                copyText.select();
+                                copyText.setSelectionRange(0, 99999)
+                                document.execCommand("copy");
+                                alert('url successfully copied');
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
