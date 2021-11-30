@@ -30,36 +30,45 @@
             <hr>
             <div class="card-columns">
                 {% for image in images %}
-                <button class="card" data-toggle="modal" data-target="#exampleModal">
+                <button class="card" data-toggle="modal" data-target="#exam">
                     <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img"
-                        style="height: 370px; width: 370px;">
+                        style="height: 370px; width: 360px;">
                     <h4 class="text-center text-success" style="text-transform: uppercase;">{{image.name}}</h4>
                 </button>
 
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exam" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
                             </div>
                             <div class="modal-body">
-                                <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
+                                <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="height: 300px; width: 500px;">
                                 <p class="imgdesc text-center">{{image.description}}</p>
                                 <p class="bg-success d-inline"><b>Category: {{image.category}}</b></p>
-                                <p class="bg-info d-inline"><b>Location: {{image.location}}</b></p>
+                                <p class="bg-info d-inline"><b>Location: {{image.location}}</b></p><br>
+                                <p class="bg-info d-inline"><b>Date created: {{image.date}}</b></p>
 
                             </div>
                             <div class="modal-footer">
                                 <input class="form-control input-lg" type="text" value="{{image.image.url}}"
                                     id="{{image.id}}.url">
-                                <button class="btn btn-success btn-sm"
-                                    onclick="copyLink('{{image.id}}.url')">Copy</button>
+                                <button class="btn btn-success btn-sm" type="button" onclick="copyToClipboard();">Copy</button>
 
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <script>
+                                        function copyToClipboard() {
+                                            var copyText = document.getElementById("{{img.id}}.url");
+                                            copyText.select();
+                                            copyText.setSelectionRange(0, 99999)
+                                            document.execCommand("copy");
+                                            alert('url copied');
+                                        }
+                                    </script>
                             </div>
                         </div>
                     </div>
