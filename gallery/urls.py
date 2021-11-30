@@ -11,8 +11,8 @@ urlpatterns=[
     path('nav/',views.nav,name = 'nav'),
     path('base/',views.base,name = 'base'),
 
-    path(r'^search/', views.search_results, name='search'),
-    path(r'^location/(?P<location>\w+)/', views.image_location, name='location'),
+    path('search/', views.search_results, name='search'),
+    path('location/', views.image_location, name='location'),
 
 ]
 
