@@ -1,5 +1,6 @@
 from django.db import models
 
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Category(models.Model):
@@ -38,6 +39,9 @@ class Location(models.Model):
 
 
 class Image(models.Model):
+
+    image = CloudinaryField('image')
+    
     image = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=70)
     description = models.TextField()
