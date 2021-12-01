@@ -42,7 +42,7 @@ class Image(models.Model):
 
     image = CloudinaryField('image')
     
-    image = models.ImageField(upload_to='images/')
+    # image = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=70)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
