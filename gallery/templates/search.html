@@ -20,7 +20,8 @@
         </button>
 
 
-        <div class="modal fade" id="test{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="test{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -39,17 +40,18 @@
 
                     </div>
                     <div class="modal-footer">
-                        <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="core">
-                        <button class="btn btn-success btn-sm" type="button" onclick="myFunction()">Copy</button>
+                        <input class="form-control input-lg" type="text" value="{{image.image.url}}"
+                            id="{{image.id}}.url">
+                        <button class="btn copy-btn btn-modal btn-success btn-sm" type="button"
+                            onclick="copyLink('{{image.id}}.url')">Copy</button>
+
 
                         <script>
-                            function myFunction() {
-                                var copyText = document.getElementById("core");
-                                copyText.select();
-                                copyText.setSelectionRange(0, 99999)
-                                document.execCommand("copy");
-                                alert('url successfully copied');
-                            }
+                                function copyLink(element) {
+                                    document.getElementById(element).select();
+                                    document.execCommand("copy");
+                                    alert('url successfully copied');
+                                }
                         </script>
                     </div>
                 </div>

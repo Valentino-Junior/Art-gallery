@@ -45,10 +45,11 @@
                                 <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
-                                  </button>
+                                </button>
                             </div>
                             <div class="modal-body">
-                                <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid" style="height: 300px; width: 500px;">
+                                <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid"
+                                    style="height: 300px; width: 500px;">
                                 <p class="imgdesc text-center">{{image.description}}</p>
                                 <p class="bg-success d-inline"><b>Category: {{image.category}}</b></p>
                                 <p class="bg-info d-inline"><b>Location: {{image.location}}</b></p><br>
@@ -57,18 +58,17 @@
                             </div>
                             <div class="modal-footer">
                                 <input class="form-control input-lg" type="text" value="{{image.image.url}}"
-                                    id="core">
-                                <button class="btn btn-success btn-sm" type="button" onclick="myFunction()">Copy</button>
+                                    id="{{image.id}}.url">
+                                <button class="btn copy-btn btn-modal btn-success btn-sm" type="button"
+                                    onclick="copyLink('{{image.id}}.url')">Copy</button>
 
-                                    <script>
-                                        function myFunction() {
-                                            var copyText = document.getElementById("core");
-                                            copyText.select();
-                                            copyText.setSelectionRange(0, 99999)
-                                            document.execCommand("copy");
-                                            alert('url successfully copied');
-                                        }
-                                    </script>
+                                <script>
+                                    function copyLink(element) {
+                                        document.getElementById(element).select();
+                                        document.execCommand("copy");
+                                        alert('url successfully copied');
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
